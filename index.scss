@@ -1,0 +1,484 @@
+@import "./scss/reset";
+@import "./scss/components";
+
+.container {
+  padding: 0 5%;
+}
+
+.italic {
+  font-style: italic;
+  color: rgba(133, 187, 177, 1);
+}
+
+.header {
+  &__logo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    // position: fixed;
+    top: 5%;
+    padding-top: 5%;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    background: linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0.244636) 24.1%,
+        rgba(255, 255, 255, 0) 47.19%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.02)
+      );
+    backdrop-filter: blur(5px);
+    z-index: 100;
+  }
+  &__navbar {
+    display: flex;
+    flex-direction: row;
+  }
+  &__navbar a {
+    position: relative;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    color: black;
+    margin-left: 1rem;
+    margin-right: 3rem;
+  }
+  &__navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--before-bg-color, #f1897b);
+    // background: #f1897b;
+    transition: 0.3s;
+  }
+  &__navbar a:hover::before {
+    width: 100%;
+  }
+  &__logo-bar nav {
+    display: flex;
+    flex-direction: row-reverse;
+    flex: 1;
+  }
+}
+
+#icon {
+  cursor: pointer;
+  font-size: 140%;
+}
+
+.home {
+  background: url(./assets/png/first-screen-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 145vh;
+  padding-top: 2%;
+  position: relative;
+  &__clearing-house {
+    margin-top: 17%;
+    max-width: 35rem;
+    margin-left: 7%;
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 20px;
+  }
+  &__text-about {
+    margin-top: 4%;
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 80%;
+    max-width: 28rem;
+    line-height: 25px;
+  }
+
+  &__join-now {
+    color: rgba(241, 137, 123, 1);
+    margin-top: 8%;
+  }
+
+  &__solis-about {
+    display: flex;
+    margin: 15% 7% 10%;
+    position: relative;
+  }
+
+  .img-skyscrapers {
+    max-width: 35rem;
+  }
+
+  &__white-box {
+    background-color: rgba(255, 255, 255, 1);
+    margin: 4% 0;
+    position: absolute;
+    max-width: 65%;
+    margin-left: 33%;
+    opacity: 80%;
+  }
+  &__box-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px 20px 30px 50px;
+  }
+  &__box-numbers {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-right: 120px;
+  }
+  &__box-num {
+    font-family: "Playfair Display";
+    font-size: 60px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20%;
+    white-space: nowrap;
+  }
+  &__dollar {
+    margin-right: 6%;
+    opacity: 10%;
+    font-size: 40px;
+  }
+  &__box-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 18px;
+    margin-top: 7%;
+    max-width: 23rem;
+  }
+  &__solis-group {
+    line-height: 25px;
+    color: rgba(38, 42, 63, 1);
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 18px;
+
+  }
+  &__contact-sales {
+    color: rgba(241, 137, 123, 1);
+    margin-top: 10%;
+  }
+}
+
+.products {
+  margin-top: 40%;
+  &__boxes-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+  }
+  &__left-part {
+    max-width: 33%;
+  }
+  &__right-part {
+    max-width: 32%;
+  }
+  &__title {
+    font-family: "Playfair Display ";
+    font-weight: 400;
+    font-size: 40px;
+    color: (38, 42, 63, 1);
+    margin-top: 10%;
+    margin-bottom: 5%;
+    max-width: 90%;
+  }
+  &__paragraph {
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 18px;
+    color: rgba(38, 42, 63, 1);
+    margin-bottom: 20%;
+  }
+  &__quote-back {
+    background: url(./assets/png/quote-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 76vh;
+    margin: 5% 7%;
+  }
+  &__quote-img {
+    position: absolute;
+    margin-top: 8%;
+    margin-left: 10%;
+    width: 8rem;
+  }
+  &__quote {
+    position: absolute;
+    max-width: 50%;
+    margin-top: 11%;
+    margin-left: 15%;
+    color: white;
+  }
+  &__quote-title {
+    font-family: "Lato";
+    font-weight: 400;
+    line-height: 40px;
+    margin-bottom: 5%;
+    line-height: 46px;
+  }
+  &__quote-paragraph {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+  }
+}
+
+.cases {
+  &__content {
+    max-width: 70rem;
+    margin-top: 10%;
+    margin-left: 18%;
+    position: relative;
+  }
+  &__img-tablet {
+    position: absolute;
+    max-width: 100%;
+  }
+  &__img-screen {
+    position: absolute;
+    max-width: 100%;
+    margin-top: 3%;
+    margin-left: 3%;
+  }
+  &__img-play {
+    position: absolute;
+    max-width: 100%;
+    margin-top: 22%;
+    margin-left: 37%;
+  }
+  &__text-wrap {
+    position: absolute;
+    margin-top: 43%;
+    margin-left: 18%;
+  }
+  &__title {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 3%;
+  }
+  &__paragraph {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 70%;
+  }
+}
+
+.pricing {
+  display: flex;
+  margin: 30% 7% 10%;
+  position: relative;
+
+  .img-features {
+    margin-top: 50%;
+    max-width: 35rem;
+  }
+
+  &__white-box {
+    background-color: rgba(255, 255, 255, 1);
+    margin: 4% 0;
+    position: absolute;
+    max-width: 65%;
+    height: 35%;
+    margin-top: 54%;
+    margin-left: 30%;
+    opacity: 80%;
+  }
+  &__box-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 70px 20px 30px 50px;
+  }
+  &__left-side {
+    text-align: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding-right: 120px;
+  }
+  &__title {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 3%;
+  }
+  &__paragraph {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+  }
+  &__settlement {
+    margin-top: 90px;
+  }
+  &__on-chain {
+    margin-bottom: 100px;
+  }
+  &__btn-border {
+    border: 1px solid rgba(228, 228, 228, 1);
+    padding: 20px 50px;
+  }
+}
+
+.resources {
+  margin: 10% 0% 15% 7%;
+  display: flex;
+  flex-direction: column;
+  &__client-wrap {
+    max-width: 25rem;
+  }
+  &__client-title {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  &__client-paragraph {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+  }
+  &__boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 70%;
+    margin-top: 5%;
+  }
+
+  &__review-burge,
+  &__review-prosse,
+  &__review-mooney {
+    padding: 45px;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &__paragraph1,
+  &__paragraph2,
+  &__paragraph3 {
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    max-width: 18rem;
+    opacity: 0.8;
+  }
+  &__title1,
+  &__title2,
+  &__title3 {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 17rem;
+    position: absolute;
+    opacity: 0.8;
+  }
+
+  .img-review1,
+  .img-review2,
+  .img-review3 {
+    width: 25rem;
+    position: absolute;
+  }
+}
+
+.contact {
+  margin: 4% 22% 0% 7%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  &__client-wrap {
+    max-width: 28rem;
+  }
+  &__title {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 4%;
+  }
+  &__paragraph {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  &__form-box {
+    width: 15rem;
+  }
+
+  &__input-box {
+    position: relative;
+    padding-top: 35%;
+    width: 100%;
+  }
+  &__input {
+    width: 200%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(38, 42, 63, 1);
+  }
+  &__label {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    color: rgba(38, 42, 63, 1);
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  &__request {
+    margin-top: 25%;
+  }
+
+  &__input-box i {
+    visibility: hidden;
+  }
+
+  &__input-box small {
+    visibility: hidden;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3% 8% 3% 7%;
+
+  &__policy {
+    display: flex;
+    flex-direction: row;
+  }
+  &__policy-right {
+    margin-right: 5%;
+  }
+}
+
+.error-message {
+  display: block;
+  color: red;
+  font-size: 12px;
+  height: 12px;
+}
+
+
