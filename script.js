@@ -1,82 +1,93 @@
-function validate() {
-  const username = document.getElementById("username");
-  const email = document.getElementById("email");
-  const more = document.getElementById("more");
-  const errorName = document.getElementById("error-name");
-  const errorEmail = document.getElementById("error-email");
-  const errorMore = document.getElementById("error-more");
-
-  let isValid = true;
-
-  if (username.value.trim().length < 3 || username.value.trim().length > 12) {
-    errorName.textContent = "Name must be between 3 and 12 characters";
-    isValid = false;
-  } else {
-    errorName.textContent = "";
-  }
-
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  if (!emailPattern.test(email.value)) {
-    errorEmail.textContent = "Please enter a valid email address";
-    isValid = false;
-  } else {
-    errorEmail.textContent = "";
-  }
-
-  if (more.value.trim().length < 5 || more.value.trim().length > 80) {
-    errorMore.textContent = "Must be between 5 and 80 characters";
-    isValid = false;
-  } else {
-    errorMore.textContent = "";
-  }
-
-  return isValid;
-}
-
 document.addEventListener("input", function (event) {
   if (event.target.matches(".contact__input")) {
     const errorSpan =
       event.target.parentElement.querySelector(".error-message");
+    validateInput(event.target, errorSpan);
+  }
+});
 
-    if (event.target.id === "username") {
-      if (
-        event.target.value.trim().length >= 3 &&
-        event.target.value.trim().length <= 12
-      ) {
-        errorSpan.textContent = "";
-      }
-    } else if (event.target.id === "email") {
-      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (emailPattern.test(event.target.value)) {
-        errorSpan.textContent = "";
-      }
-    } else if (event.target.id === "more") {
-      if (
-        event.target.value.trim().length >= 5 &&
-        event.target.value.trim().length <= 80
-      ) {
-        errorSpan.textContent = "";
-      }
+const submitButton = document.getElementById("submitBtn");
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const inputs = document.querySelectorAll(".contact__input");
+  let allInputsValid = true;
+  inputs.forEach(function (input) {
+    const errorSpan = input.parentElement.querySelector(".error-message");
+    validateInput(input, errorSpan);
+    if (errorSpan.textContent !== "") {
+      allInputsValid = false;
     }
+  });
+
+  if (allInputsValid) {
+    // Добавьте здесь код для отправки формы, если необходимо
+    showSuccessAlert();
   }
 });
 
 const inputs = document.querySelectorAll(".contact__input");
 inputs.forEach(function (input) {
   input.addEventListener("input", function () {
-    validate(); // Вызываем функцию валидации при вводе
+    const errorSpan = input.parentElement.querySelector(".error-message");
+    validateInput(input, errorSpan);
   });
 });
 
-const submitButton = document.getElementById("submitBtn");
-submitButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Остановить стандартное поведение отправки формы
-  if (validate()) {
-    showSuccessAlert();
+function validateInput(input, errorSpan) {
+  if (input.id === "username") {
+    if (input.value.trim().length < 3 || input.value.trim().length > 12) {
+      errorSpan.textContent = "Name must be between 3 and 12 characters";
+    } else {
+      errorSpan.textContent = "";
+    }
+  } else if (input.id === "email") {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(input.value)) {
+      errorSpan.textContent = "Please enter a valid email address";
+    } else {
+      errorSpan.textContent = "";
+    }
+  } else if (input.id === "more") {
+    if (input.value.trim().length < 5 || input.value.trim().length > 80) {
+      errorSpan.textContent = "Must be between 5 and 80 characters";
+    } else {
+      errorSpan.textContent = "";
+    }
   }
-});
+}
 
-// Функция для показа SweetAlert с успешным сообщением
+function validateAndShowPopup() {
+  const inputs = document.querySelectorAll(".contact__input");
+  let allInputsValid = true;
+  inputs.forEach(function (input) {
+    const errorSpan = input.parentElement.querySelector(".error-message");
+    validateInput(input, errorSpan);
+    if (errorSpan.textContent !== "") {
+      allInputsValid = false;
+    }
+  });
+
+  if (allInputsValid) {
+    showSuccessAlert();
+    changeButtonAndLineColor(true);
+  } else {
+    changeButtonAndLineColor(false);
+  }
+}
+
+function changeButtonAndLineColor(valid) {
+  const submitButton = document.getElementById("submitBtn");
+  const salesColorLine = document.querySelector(".sales-color-line");
+  
+  if (valid) {
+    submitButton.style.backgroundColor = "green";
+    salesColorLine.style.backgroundColor = "green";
+  } else {
+    submitButton.style.backgroundColor = "";
+    salesColorLine.style.backgroundColor = "";
+  }
+}
+
 function showSuccessAlert() {
   Swal.fire({
     icon: "success",
@@ -84,6 +95,19 @@ function showSuccessAlert() {
     text: "Your message has been successfully sent!",
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Dark Theme
 
@@ -103,7 +127,7 @@ const whiteBox = document.querySelectorAll(".home__white-box, .pricing__white-bo
 const elementsToChangeColor = document.querySelectorAll(
   ".home__dollar, .home__box-paragraph, .home__solis-group, .home__box-num",
 );
-const contactSalesButton = document.querySelector(".home__contact-sales");
+const contactSalesButton = document.querySelector(".shome__contact-sales");
 const salesColorLine = document.querySelector(".sales-color-line");
 const italicSolutions = document.querySelectorAll(".italic");
 const productsTitles = document.querySelectorAll(".products__title");
@@ -138,6 +162,11 @@ icon.addEventListener("click", function () {
     casesImgPlay.src = "./assets/png/icon play-dark.png";
     pricingWhiteBox.style.backgroundColor = '#161926';
 
+    for (const link of navbarLinks) {
+      link.style.color = isDarkTheme ? "#fff" : "black";
+      link.style.setProperty("--before-bg-color", isDarkTheme ? "#53F3CD" : "#F1897B");
+    }
+
     for (const solution of italicSolutions) {
       solution.style.color = "#689FF2";
     }
@@ -147,7 +176,7 @@ icon.addEventListener("click", function () {
     }
 
     for (const link of navbarLinks) {
-      link.style.color = "#fff";
+      link.style.color = "white";
       link.style.setProperty("--before-bg-color", "#53F3CD");
     }
 
@@ -219,3 +248,25 @@ icon.addEventListener("click", function () {
     }
   }
 });
+
+
+
+
+
+const header = document.querySelector(".header__logo-bar");
+
+let menu = document.querySelector("#menu-icon");
+let navlist = document.querySelector(".header__navbar");
+
+menu.onclick = () => {
+  menu.classList.toggle("bx-x");
+  navlist.classList.toggle("open");
+};
+
+window.onscroll = () => {
+  menu.classList.remove("bx-x");
+  navlist.classList.remove("open");
+};
+
+
+
