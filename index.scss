@@ -38,7 +38,7 @@
   }
   &__navbar {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
   &__navbar a {
     position: relative;
@@ -56,7 +56,6 @@
     width: 0;
     height: 2px;
     background-color: var(--before-bg-color, #f1897b);
-    // background: #f1897b;
     transition: 0.3s;
   }
   &__navbar a:hover::before {
@@ -64,7 +63,6 @@
   }
   &__logo-bar nav {
     display: flex;
-    flex: 1;
   }
 }
 
@@ -111,7 +109,7 @@
 
   .img-skyscrapers {
     max-width: 100%;
-  height: auto;
+    height: auto;
   }
 
   &__white-box {
@@ -169,6 +167,9 @@
 }
 
 @media (max-width: 1120px) {
+  .home {
+    height: 130vh;
+  }
   .home__white-box {
     margin-left: 25%;
   }
@@ -192,10 +193,10 @@
     margin-top: 20%;
   }
 }
-  @media (max-width: 830px) {
-    .home__box-num {
-      font-size: 40px;
-    }
+@media (max-width: 830px) {
+  .home__box-num {
+    font-size: 40px;
+  }
 }
 @media (max-width: 660px) {
   .home__white-box {
@@ -215,6 +216,18 @@
   }
   .home .img-skyscrapers {
     height: 58rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .home__clearing-house {
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 560px) {
+  .home__clearing-house {
+    margin-top: 30%;
   }
 }
 
@@ -285,82 +298,56 @@
   }
 }
 
+@media (max-width: 968px) {
+  .products__quote-back {
+    height: 60vh;
+  }
+}
+
 @media (max-width: 768px) {
   .products__boxes-row {
     flex-direction: column;
   }
   .products__left-part {
-max-width: 90%;
+    max-width: 90%;
   }
   .products__right-part {
     max-width: 90%;
   }
+  .products__quote-back {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 1400px) {
+  .products {
+    margin-top: 10%;
+  }
 }
 @media (max-width: 580px) {
-.products {
-  margin-top: 100%;
-}
+  .products {
+    margin-top: 100%;
+  }
 }
 @media (max-width: 475px) {
   .products {
-    margin-top: 120%;
+    margin-top: 70%;
   }
+}
+@media (max-width: 410px) {
+  .products {
+    margin-top: 140%;
   }
-  @media (max-width: 410px) {
-    .products {
-      margin-top: 140%;
-    }
-    }
+}
 
-
-
-.cases {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 5%;
-  &__content {
-  position: relative;
-  max-width: 100%;
-  max-height: 100%;
+@media (max-width: 395px) {
+  .products {
+    margin-top: 90%;
   }
-  &__img-tablet {
-    display: block;
-    max-width: 100%; 
-    max-height: 100%;
-    height: auto;
-  }
-  &__img-screen,
-  &__img-play {
-    position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 90%; 
-  max-height: 95%;
-  margin-top: 3%;
-  margin-left: 4%;
-  }
-  &__img-play {
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 2;
-  }
-  &__text-wrap {
-    margin: 5% 0 5% 15%;
-  }
-  &__title {
-    font-family: "Playfair Display";
-    font-weight: 400;
-    font-size: 40px;
-    margin-bottom: 3%;
-  }
-  &__paragraph {
-    font-family: "Lato";
-    font-size: 18px;
-    font-weight: 300;
-    max-width: 70%;
+}
+@media (max-width: 376px) {
+  .products {
+    margin-top: 150%;
   }
 }
 
@@ -385,6 +372,68 @@ max-width: 90%;
   .products__quote-title {
     font-size: 1.2rem;
     padding-bottom: 5%;
+  }
+}
+
+.cases {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 5%;
+  &__content {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  &__img-tablet {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+  }
+  &__img-screen,
+  &__img-play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 90%;
+    max-height: 95%;
+    margin-top: 3%;
+    margin-left: 4%;
+  }
+  &__img-play {
+    top: 50%;
+    left: 50%;
+    margin-top: 0;
+    margin-left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  &__text-wrap {
+    margin: 5% 0 5% 15%;
+  }
+  &__title {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 3%;
+  }
+  &__paragraph {
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 820px) {
+  .cases__img-play {
+    width: 15%;
+    height: 23%;
+  }
+  .cases__text-wrap {
+    margin: 5% 2% 5% 5%;
   }
 }
 
@@ -441,6 +490,9 @@ max-width: 90%;
     font-size: 18px;
     font-weight: 300;
   }
+  &__join-now {
+    color: rgba(241, 137, 123, 1);
+  }
   &__settlement {
     margin-top: 90px;
   }
@@ -467,77 +519,13 @@ max-width: 90%;
   }
   .pricing__settlement {
     margin-top: 50px;
+  }
+  .pricing__on-chain {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
 }
-.pricing__on-chain {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
 
-}
-
-// .resources {
-//   margin: 10% 0% 15% 7%;
-//   display: flex;
-//   flex-direction: column;
-//   &__client-wrap {
-//     max-width: 25rem;
-//   }
-//   &__client-title {
-//     font-family: "Playfair Display";
-//     font-weight: 400;
-//     font-size: 40px;
-//     margin-bottom: 30px;
-//   }
-//   &__client-paragraph {
-//     font-family: "Lato";
-//     font-size: 18px;
-//     font-weight: 300;
-//   }
-//   &__boxes {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     max-width: 70%;
-//     margin-top: 5%;
-//   }
-
-//   &__review-burge,
-//   &__review-prosse,
-//   &__review-mooney {
-//     padding: 45px;
-//     line-height: 26px;
-//     color: rgba(255, 255, 255, 1);
-//   }
-
-//   &__paragraph1,
-//   &__paragraph2,
-//   &__paragraph3 {
-//     font-family: "Lato";
-//     font-size: 16px;
-//     font-weight: 400;
-//     position: absolute;
-//     max-width: 18rem;
-//     opacity: 0.8;
-//   }
-//   &__title1,
-//   &__title2,
-//   &__title3 {
-//     font-family: "Playfair Display";
-//     font-weight: 400;
-//     font-size: 20px;
-//     font-style: italic;
-//     margin-top: 17rem;
-//     position: absolute;
-//     opacity: 0.8;
-//   }
-
-//   .img-review1,
-//   .img-review2,
-//   .img-review3 {
-//     width: 25rem;
-//     position: absolute;
-//   }
-// }
 .client {
   margin-left: 7%;
   margin-bottom: 5%;
@@ -545,17 +533,16 @@ max-width: 90%;
     max-width: 22rem;
   }
   &__client-title {
-   font-family: "Playfair Display";
-      font-weight: 400;
-      font-size: 40px;
-   margin-bottom: 30px;
+    font-family: "Playfair Display";
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 30px;
   }
-    &__client-paragraph {
-     font-family: "Lato";
+  &__client-paragraph {
+    font-family: "Lato";
     font-size: 18px;
-        font-weight: 300;
-        
-   }
+    font-weight: 300;
+  }
 }
 
 .resources {
@@ -673,6 +660,7 @@ max-width: 90%;
   }
 
   &__request {
+    color: rgba(241, 137, 123, 1);
     margin-top: 25%;
   }
 
@@ -685,10 +673,15 @@ max-width: 90%;
   }
 }
 
-@media  (max-width: 768px) {
+@media (max-width: 768px) {
   .contact {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+@media (max-width: 520px) {
+  .contact__form-box {
+    width: 50%;
   }
 }
 
@@ -707,19 +700,29 @@ max-width: 90%;
   }
 }
 
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1070px) {
+  .nav-icons-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-icons {
+    margin-left: 40%;
+  }
+}
+
 .error-message {
   display: block;
   color: red;
   font-size: 12px;
   height: 12px;
 }
-
-
-
-
-
-
-/* Ваши стили для навигации */
 
 /* Стили для бургер-меню */
 .header__logo-bar {
@@ -736,11 +739,11 @@ max-width: 90%;
 .header__navbar {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 10%;
+  margin-left: 1%;
 }
 
 .header__navbar a {
-  color: #fff;
+  color: #000;
   font-size: 16px;
   font-weight: 600;
   margin: 0 30px;
@@ -759,7 +762,7 @@ max-width: 90%;
   display: none;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1070px) {
   #menu-icon {
     display: initial;
   }
@@ -780,9 +783,9 @@ max-width: 90%;
     margin: 1rem;
     border-left: 3px solid #000;
   }
-  .header__navbar a:hover {
-    color: #000;
-  }
+  // .header__navbar a:hover {
+  //   color: #000;
+  // }
   .header__navbar.open {
     top: 75%;
     margin-left: -1%;
@@ -795,5 +798,11 @@ max-width: 90%;
     display: block;
   }
 }
-
-
+@media (max-width: 960px) {
+  .header__logo-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 30px;
+  }
+}
