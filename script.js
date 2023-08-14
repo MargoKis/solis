@@ -78,6 +78,15 @@ document.addEventListener("DOMContentLoaded", function () {
     return allInputsValid;
   }
 
+  submitButton.addEventListener("click", function (event) {
+    console.log("Button clicked!"); // Добавьте эту строку
+    event.preventDefault();
+  
+    if (areAllInputsValid()) {
+      showSuccessAlert();
+    }
+  });
+
   function showSuccessAlert() {
     Swal.fire({
       icon: "success",
