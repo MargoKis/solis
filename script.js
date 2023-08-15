@@ -1,3 +1,5 @@
+//form validation
+
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".contact__input");
   const submitButton = document.getElementById("submitBtn");
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   submitButton.addEventListener("click", function (event) {
-    console.log("Button clicked!"); // Добавьте эту строку
+    console.log("Button clicked!"); 
     event.preventDefault();
   
     if (areAllInputsValid()) {
@@ -105,6 +107,7 @@ const body = document.body;
 const homeSection = document.querySelector(".home");
 const iconContainer = document.querySelector(".icon-container");
 const navbarLinks = document.querySelectorAll(".header__navbar a");
+const navLine = document.querySelectorAll('.header__navbar a::before');
 const titleClearinghouse = document.querySelector(".home__title-clearinghouse");
 const spanClearinghouse = document.querySelector(
   ".home__title-clearinghouse span.italic"
@@ -145,6 +148,8 @@ icon.addEventListener("click", function () {
   const isDarkTheme = body.classList.contains("dark-theme");
 
   if (isDarkTheme) {
+
+
     for (const link of navbarLinks) {
       link.style.color = "#fff";
     }
@@ -197,6 +202,10 @@ icon.addEventListener("click", function () {
       change.style.color = "#fff";
     }
 
+    for (const line of navLine) {
+      line.style.backgroundColor = "#53F3CD";
+     }
+   
     body.style.backgroundColor = "#161926";
     whiteBox.style.backgroundColor = "#161926";
     pricingWhiteBox.style.backgroundColor = "#161926";
@@ -220,6 +229,7 @@ icon.addEventListener("click", function () {
     contactSalesButton.style.borderColor = "#53F3CD";
     salesColorLine.style.backgroundColor = "#53F3CD";
     casesImgPlay.src = "./assets/png/icon-play-dark.png";
+    
   } else {
     for (const link of navbarLinks) {
       link.style.color = "black";
@@ -308,6 +318,8 @@ icon.addEventListener("click", function () {
     casesImgPlay.src = "./assets/png/icon-play.png";
   }
 });
+
+// burger-menu
 
 const header = document.querySelector(".header__logo-bar");
 

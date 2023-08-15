@@ -132,7 +132,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--before-bg-color, #f1897b);
+  background-color: #f1897b;
   transition: 0.3s;
 }
 .header__navbar a:hover::before {
@@ -178,7 +178,7 @@ body {
 }
 .home__solis-about {
   display: flex;
-  margin: 15% 7% 10%;
+  margin: 15% 0 0 7%;
   position: relative;
 }
 .home .img-skyscrapers {
@@ -387,6 +387,26 @@ body {
 }
 @media (max-width: 1400px) {
   .products {
+    margin-top: 30%;
+  }
+}
+@media (max-width: 1240px) {
+  .products {
+    margin-top: 60%;
+  }
+}
+@media (max-width: 1040px) {
+  .products {
+    margin-top: 60%;
+  }
+}
+@media (max-width: 940px) {
+  .products {
+    margin-top: 20%;
+  }
+}
+@media (max-width: 830px) {
+  .products {
     margin-top: 10%;
   }
 }
@@ -397,22 +417,22 @@ body {
 }
 @media (max-width: 475px) {
   .products {
-    margin-top: 70%;
+    margin-top: 90%;
   }
 }
 @media (max-width: 410px) {
   .products {
-    margin-top: 140%;
+    margin-top: 90%;
   }
 }
 @media (max-width: 395px) {
   .products {
-    margin-top: 90%;
+    margin-top: 120%;
   }
 }
 @media (max-width: 376px) {
   .products {
-    margin-top: 150%;
+    margin-top: 180%;
   }
 }
 @media (max-width: 768px) {
