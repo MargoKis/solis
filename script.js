@@ -81,9 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   submitButton.addEventListener("click", function (event) {
-    console.log("Button clicked!"); 
+    console.log("Button clicked!");
     event.preventDefault();
-  
+
     if (areAllInputsValid()) {
       showSuccessAlert();
     }
@@ -98,8 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
 // Dark Theme
 
 const icon = document.getElementById("icon");
@@ -107,7 +105,7 @@ const body = document.body;
 const homeSection = document.querySelector(".home");
 const iconContainer = document.querySelector(".icon-container");
 const navbarLinks = document.querySelectorAll(".header__navbar a");
-const navLine = document.querySelectorAll('.header__navbar a::before');
+const navLine = document.querySelectorAll(".header__navbar a::before");
 const titleClearinghouse = document.querySelector(".home__title-clearinghouse");
 const spanClearinghouse = document.querySelector(
   ".home__title-clearinghouse span.italic"
@@ -148,8 +146,6 @@ icon.addEventListener("click", function () {
   const isDarkTheme = body.classList.contains("dark-theme");
 
   if (isDarkTheme) {
-
-
     for (const link of navbarLinks) {
       link.style.color = "#fff";
     }
@@ -204,8 +200,8 @@ icon.addEventListener("click", function () {
 
     for (const line of navLine) {
       line.style.backgroundColor = "#53F3CD";
-     }
-   
+    }
+
     body.style.backgroundColor = "#161926";
     whiteBox.style.backgroundColor = "#161926";
     pricingWhiteBox.style.backgroundColor = "#161926";
@@ -229,7 +225,6 @@ icon.addEventListener("click", function () {
     contactSalesButton.style.borderColor = "#53F3CD";
     salesColorLine.style.backgroundColor = "#53F3CD";
     casesImgPlay.src = "./assets/png/icon-play-dark.png";
-    
   } else {
     for (const link of navbarLinks) {
       link.style.color = "black";

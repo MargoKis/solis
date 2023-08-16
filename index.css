@@ -84,9 +84,29 @@ body {
 }
 
 .hr-footer {
-  margin-top: 5%;
+  margin-top: 8%;
   width: 85%;
   margin-left: 7%;
+}
+
+.resources__paragraph, .resources__title, .products__quote-title, .header__navbar a {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.contact__paragraph, .products__paragraph, .home__solis-group, .home__text-about {
+  font-family: "Lato";
+  font-weight: 300;
+}
+
+.contact__label, .contact__title, .resources__title, .client__title, .pricing__title, .cases__title, .products__quote-paragraph, .products__title, .home__box-num, .home__clearing-house {
+  font-family: "Playfair Display";
+  font-weight: 400;
+}
+
+.header__logo-bar, .footer__policy, .footer, .contact, .home__box-content {
+  display: flex;
+  flex-direction: row;
 }
 
 .container {
@@ -119,8 +139,6 @@ body {
 }
 .header__navbar a {
   position: relative;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
   color: black;
   margin-left: 1rem;
   margin-right: 3rem;
@@ -151,7 +169,6 @@ body {
   background: url(./assets/png/first-screen-image.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 145vh;
   padding-top: 2%;
   position: relative;
 }
@@ -159,15 +176,11 @@ body {
   margin-top: 17%;
   max-width: 35rem;
   margin-left: 7%;
-  font-family: "Playfair Display";
-  font-weight: 400;
   font-size: 20px;
 }
 .home__text-about {
   margin-top: 4%;
-  font-family: "Lato";
   font-size: 18px;
-  font-weight: 300;
   opacity: 80%;
   max-width: 28rem;
   line-height: 25px;
@@ -179,7 +192,6 @@ body {
 .home__solis-about {
   display: flex;
   margin: 15% 0 0 7%;
-  position: relative;
 }
 .home .img-skyscrapers {
   max-width: 100%;
@@ -189,15 +201,14 @@ body {
   background-color: rgb(255, 255, 255);
   margin: 3% 0;
   position: absolute;
-  margin-left: 33%;
+  margin-left: 28%;
   opacity: 80%;
 }
 .home__box-content {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   padding: 0px 20px 30px 50px;
+  position: relative;
 }
 .home__box-numbers {
   text-align: center;
@@ -206,9 +217,7 @@ body {
   padding-right: 120px;
 }
 .home__box-num {
-  font-family: "Playfair Display";
   font-size: 60px;
-  font-weight: 400;
   text-align: center;
   margin-top: 20%;
   white-space: nowrap;
@@ -229,8 +238,6 @@ body {
 .home__solis-group {
   line-height: 25px;
   color: rgb(38, 42, 63);
-  font-family: "Lato";
-  font-weight: 300;
   font-size: 18px;
 }
 .home__contact-sales {
@@ -239,9 +246,6 @@ body {
 }
 
 @media (max-width: 1120px) {
-  .home {
-    height: 130vh;
-  }
   .home__white-box {
     margin-left: 25%;
   }
@@ -259,10 +263,7 @@ body {
 }
 @media (max-width: 830px) {
   .home__white-box {
-    margin-left: 5%;
-  }
-  .home__white-box {
-    margin-top: 20%;
+    margin-top: 10%;
   }
 }
 @media (max-width: 830px) {
@@ -273,6 +274,7 @@ body {
 @media (max-width: 660px) {
   .home__white-box {
     margin-top: 10%;
+    margin-left: 0%;
   }
 }
 @media (max-width: 600px) {
@@ -280,14 +282,15 @@ body {
     margin-top: 5%;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 650px) {
   .home__box-content {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    position: relative;
   }
   .home .img-skyscrapers {
-    height: 58rem;
+    height: 60rem;
   }
 }
 @media (max-width: 760px) {
@@ -297,11 +300,23 @@ body {
 }
 @media (max-width: 560px) {
   .home__clearing-house {
-    margin-top: 30%;
+    font-size: 16px;
+  }
+  .home__text-about {
+    font-size: 16px;
+  }
+}
+@media (max-width: 430px) {
+  .home__clearing-house {
+    margin-top: 35%;
+    font-size: 13px;
+  }
+  .home__text-about {
+    font-size: 13px;
   }
 }
 .products {
-  margin-top: 40%;
+  margin-top: 10%;
 }
 .products__boxes-row {
   display: flex;
@@ -318,8 +333,6 @@ body {
   max-width: 32%;
 }
 .products__title {
-  font-family: "Playfair Display ";
-  font-weight: 400;
   font-size: 40px;
   color: #000;
   margin-top: 10%;
@@ -327,8 +340,6 @@ body {
   max-width: 90%;
 }
 .products__paragraph {
-  font-family: "Lato";
-  font-weight: 300;
   font-size: 18px;
   color: rgb(38, 42, 63);
   margin-bottom: 20%;
@@ -347,21 +358,17 @@ body {
 }
 .products__quote {
   position: absolute;
-  max-width: 50%;
+  max-width: 60%;
   margin-top: 11%;
   margin-left: 15%;
   color: white;
 }
 .products__quote-title {
-  font-family: "Lato";
-  font-weight: 400;
   line-height: 40px;
   margin-bottom: 5%;
   line-height: 46px;
 }
 .products__quote-paragraph {
-  font-family: "Playfair Display";
-  font-weight: 400;
   font-style: italic;
   font-size: 18px;
 }
@@ -374,6 +381,7 @@ body {
 @media (max-width: 768px) {
   .products__boxes-row {
     flex-direction: column;
+    margin-left: 7%;
   }
   .products__left-part {
     max-width: 90%;
@@ -381,87 +389,36 @@ body {
   .products__right-part {
     max-width: 90%;
   }
-  .products__quote-back {
-    height: 50vh;
-  }
-}
-@media (max-width: 1400px) {
-  .products {
-    margin-top: 30%;
-  }
-}
-@media (max-width: 1240px) {
-  .products {
-    margin-top: 60%;
-  }
-}
-@media (max-width: 1040px) {
-  .products {
-    margin-top: 60%;
-  }
-}
-@media (max-width: 940px) {
-  .products {
-    margin-top: 20%;
-  }
-}
-@media (max-width: 830px) {
-  .products {
-    margin-top: 10%;
-  }
-}
-@media (max-width: 580px) {
-  .products {
-    margin-top: 100%;
-  }
-}
-@media (max-width: 475px) {
-  .products {
-    margin-top: 90%;
-  }
-}
-@media (max-width: 410px) {
-  .products {
-    margin-top: 90%;
-  }
-}
-@media (max-width: 395px) {
-  .products {
-    margin-top: 120%;
-  }
-}
-@media (max-width: 376px) {
-  .products {
-    margin-top: 180%;
-  }
-}
-@media (max-width: 768px) {
   .products__quote-title {
-    font-size: 2rem;
+    font-size: 20px;
+  }
+  .products__quote-img {
+    width: 10%;
   }
 }
-@media (max-width: 675px) {
+@media (max-width: 520px) {
   .products__quote-title {
-    font-size: 1.5rem;
-    padding-bottom: 5%;
+    font-size: 16px;
+  }
+  .products__quote-paragraph {
+    font-size: 14px;
+  }
+  .products__quote-img {
+    width: 10%;
   }
 }
-@media (max-width: 550px) {
-  .products__quote-title {
-    font-size: 1.5rem;
-    padding-bottom: 5%;
+@media (max-width: 520px) {
+  .products__title {
+    font-size: 28px;
   }
-}
-@media (max-width: 400px) {
-  .products__quote-title {
-    font-size: 1.2rem;
-    padding-bottom: 5%;
+  .products__paragraph {
+    font-size: 20px;
   }
 }
 .cases {
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   margin-left: 5%;
 }
@@ -469,6 +426,7 @@ body {
   position: relative;
   max-width: 100%;
   max-height: 100%;
+  margin: 3% 3%;
 }
 .cases__img-tablet {
   display: block;
@@ -497,15 +455,13 @@ body {
   margin: 5% 0 5% 15%;
 }
 .cases__title {
-  font-family: "Playfair Display";
-  font-weight: 400;
   font-size: 40px;
   margin-bottom: 3%;
 }
 .cases__paragraph {
   font-family: "Lato";
-  font-size: 18px;
   font-weight: 300;
+  font-size: 18px;
   max-width: 70%;
 }
 
@@ -515,7 +471,29 @@ body {
     height: 23%;
   }
   .cases__text-wrap {
-    margin: 5% 2% 5% 5%;
+    margin: 5% 3%;
+  }
+  .cases__title {
+    font-size: 30px;
+  }
+  .cases__paragraph {
+    font-size: 20px;
+    max-width: 90%;
+  }
+}
+@media (max-width: 520px) {
+  .cases__img-play {
+    width: 15%;
+    height: 23%;
+  }
+  .cases__text-wrap {
+    margin: 5% 5%;
+  }
+  .cases__title {
+    font-size: 24px;
+  }
+  .cases__paragraph {
+    font-size: 16px;
   }
 }
 .pricing {
@@ -549,25 +527,26 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
   padding: 8%;
 }
 .pricing__left-side {
   text-align: flex-start;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   padding-right: 120px;
 }
+.pricing__right-side {
+  display: inline-flex;
+  flex-direction: column;
+}
 .pricing__title {
-  font-family: "Playfair Display";
-  font-weight: 400;
   font-size: 24px;
   margin-bottom: 3%;
 }
 .pricing__paragraph {
   font-family: "Lato";
-  font-size: 18px;
   font-weight: 300;
+  font-size: 18px;
 }
 .pricing__join-now {
   color: rgb(241, 137, 123);
@@ -581,9 +560,10 @@ body {
 .pricing__btn-border {
   border: 1px solid rgb(228, 228, 228);
   padding: 20px 50px;
+  max-width: 200px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .pricing__white-box {
     margin-left: 0;
   }
@@ -610,18 +590,24 @@ body {
 .client__wrap {
   max-width: 22rem;
 }
-.client__client-title {
-  font-family: "Playfair Display";
-  font-weight: 400;
+.client__title {
   font-size: 40px;
   margin-bottom: 30px;
 }
-.client__client-paragraph {
+.client__paragraph {
   font-family: "Lato";
-  font-size: 18px;
   font-weight: 300;
+  font-size: 18px;
 }
 
+@media (max-width: 520px) {
+  .client__title {
+    font-size: 26px;
+  }
+  .client__paragraph {
+    font-size: 18px;
+  }
+}
 .resources__boxes {
   display: flex;
   justify-content: center;
@@ -641,9 +627,7 @@ body {
   height: auto;
 }
 .resources__paragraph, .resources__title {
-  font-family: "Lato";
   font-size: 16px;
-  font-weight: 400;
   opacity: 0.8;
   position: absolute;
   top: 50%;
@@ -651,14 +635,12 @@ body {
   transform: translate(-50%, -50%);
   color: white;
   margin: 0;
-  width: 70%;
+  width: 60%;
   text-align: justify;
   font-size: 14px;
   line-height: 25px;
 }
 .resources__title {
-  font-family: "Playfair Display";
-  font-weight: 400;
   font-size: 20px;
   font-style: italic;
   top: 90%;
@@ -675,8 +657,6 @@ body {
 }
 .contact {
   margin: 4% 22% 0% 7%;
-  display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
@@ -684,15 +664,8 @@ body {
   max-width: 28rem;
 }
 .contact__title {
-  font-family: "Playfair Display";
-  font-weight: 400;
   font-size: 40px;
   margin-bottom: 4%;
-}
-.contact__paragraph {
-  font-family: "Lato";
-  font-size: 18px;
-  font-weight: 300;
 }
 .contact__form-box {
   width: 15rem;
@@ -715,8 +688,6 @@ body {
   top: 50%;
   font-size: 18px;
   color: rgb(38, 42, 63);
-  font-family: "Playfair Display";
-  font-weight: 400;
   font-size: 18px;
   font-style: italic;
 }
@@ -737,20 +708,23 @@ body {
     align-items: flex-start;
   }
 }
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   .contact__form-box {
     width: 50%;
   }
+  .contact__title {
+    font-size: 28px;
+  }
+  .contact__paragraph {
+    font-size: 18px;
+  }
+  .contact {
+    margin: 4% 2% 0% 7%;
+  }
 }
 .footer {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin: 3% 8% 3% 7%;
-}
-.footer__policy {
-  display: flex;
-  flex-direction: row;
 }
 .footer__policy-right {
   margin-right: 5%;
@@ -780,11 +754,8 @@ body {
 
 /* Стили для бургер-меню */
 .header__logo-bar {
-  display: none;
   position: absolute;
   z-index: 1000;
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   transition: all 0.5s ease;

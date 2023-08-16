@@ -1,5 +1,6 @@
 @import "./scss/reset";
 @import "./scss/components";
+@import "./scss/extends";
 
 .container {
   padding: 0 5%;
@@ -42,8 +43,7 @@
   }
   &__navbar a {
     position: relative;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
+    @extend %Lato400;
     color: black;
     margin-left: 1rem;
     margin-right: 3rem;
@@ -55,7 +55,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color:  #f1897b;
+    background-color: #f1897b;
     transition: 0.3s;
   }
   &__navbar a:hover::before {
@@ -75,22 +75,20 @@
   background: url(./assets/png/first-screen-image.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 145vh;
+  // height: 145vh; !!!!
   padding-top: 2%;
   position: relative;
   &__clearing-house {
     margin-top: 17%;
     max-width: 35rem;
     margin-left: 7%;
-    font-family: "Playfair Display";
-    font-weight: 400;
+    @extend %Playfair400;
     font-size: 20px;
   }
   &__text-about {
     margin-top: 4%;
-    font-family: "Lato";
+    @extend %Lato300;
     font-size: 18px;
-    font-weight: 300;
     opacity: 80%;
     max-width: 28rem;
     line-height: 25px;
@@ -104,7 +102,6 @@
   &__solis-about {
     display: flex;
     margin: 15% 0 0 7%;
-    position: relative;
   }
 
   .img-skyscrapers {
@@ -116,15 +113,15 @@
     background-color: rgba(255, 255, 255, 1);
     margin: 3% 0;
     position: absolute;
-    margin-left: 33%;
+    margin-left: 28%;
     opacity: 80%;
   }
   &__box-content {
-    display: flex;
-    flex-direction: row;
+    @extend %DisplayRow;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px 20px 30px 50px;
+    position: relative;
   }
   &__box-numbers {
     text-align: center;
@@ -133,9 +130,8 @@
     padding-right: 120px;
   }
   &__box-num {
-    font-family: "Playfair Display";
+    @extend %Playfair400;
     font-size: 60px;
-    font-weight: 400;
     text-align: center;
     margin-top: 20%;
     white-space: nowrap;
@@ -156,8 +152,7 @@
   &__solis-group {
     line-height: 25px;
     color: rgba(38, 42, 63, 1);
-    font-family: "Lato";
-    font-weight: 300;
+    @extend %Lato300;
     font-size: 18px;
   }
   &__contact-sales {
@@ -167,9 +162,9 @@
 }
 
 @media (max-width: 1120px) {
-  .home {
-    height: 130vh;
-  }
+  // .home {
+  //   height: 130vh;
+  // }
   .home__white-box {
     margin-left: 25%;
   }
@@ -187,10 +182,7 @@
 }
 @media (max-width: 830px) {
   .home__white-box {
-    margin-left: 5%;
-  }
-  .home__white-box {
-    margin-top: 20%;
+    margin-top: 10%;
   }
 }
 @media (max-width: 830px) {
@@ -201,6 +193,7 @@
 @media (max-width: 660px) {
   .home__white-box {
     margin-top: 10%;
+    margin-left: 0%;
   }
 }
 @media (max-width: 600px) {
@@ -208,14 +201,15 @@
     margin-top: 5%;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 650px) {
   .home__box-content {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    position: relative;
   }
   .home .img-skyscrapers {
-    height: 58rem;
+    height: 60rem;
   }
 }
 
@@ -227,12 +221,25 @@
 
 @media (max-width: 560px) {
   .home__clearing-house {
-    margin-top: 30%;
+    font-size: 16px;
+  }
+  .home__text-about {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  .home__clearing-house {
+    margin-top: 35%;
+    font-size: 13px;
+  }
+  .home__text-about {
+    font-size: 13px;
   }
 }
 
 .products {
-  margin-top: 40%;
+  margin-top: 10%;
 
   &__boxes-row {
     display: flex;
@@ -249,8 +256,7 @@
     max-width: 32%;
   }
   &__title {
-    font-family: "Playfair Display ";
-    font-weight: 400;
+    @extend %Playfair400;
     font-size: 40px;
     color: #000;
     margin-top: 10%;
@@ -258,8 +264,7 @@
     max-width: 90%;
   }
   &__paragraph {
-    font-family: "Lato";
-    font-weight: 300;
+    @extend %Lato300;
     font-size: 18px;
     color: rgba(38, 42, 63, 1);
     margin-bottom: 20%;
@@ -278,21 +283,19 @@
   }
   &__quote {
     position: absolute;
-    max-width: 50%;
+    max-width: 60%;
     margin-top: 11%;
     margin-left: 15%;
     color: white;
   }
   &__quote-title {
-    font-family: "Lato";
-    font-weight: 400;
+    @extend %Lato400;
     line-height: 40px;
     margin-bottom: 5%;
     line-height: 46px;
   }
   &__quote-paragraph {
-    font-family: "Playfair Display";
-    font-weight: 400;
+    @extend %Playfair400;
     font-style: italic;
     font-size: 18px;
   }
@@ -307,6 +310,7 @@
 @media (max-width: 768px) {
   .products__boxes-row {
     flex-direction: column;
+    margin-left: 7%;
   }
   .products__left-part {
     max-width: 90%;
@@ -314,97 +318,44 @@
   .products__right-part {
     max-width: 90%;
   }
-  .products__quote-back {
-    height: 50vh;
-  }
-}
-
-@media (max-width: 1400px) {
-  .products {
-    margin-top: 30%;
-  }
-}
-@media (max-width: 1240px) {
-  .products {
-    margin-top: 60%;
-  }
-}
-@media (max-width: 1040px) {
-  .products {
-    margin-top: 60%;
-  }
-}
-@media (max-width: 940px) {
-  .products {
-    margin-top: 20%;
-  }
-}
-@media (max-width: 830px) {
-  .products {
-    margin-top: 10%;
-  }
-}
-@media (max-width: 580px) {
-  .products {
-    margin-top: 100%;
-  }
-}
-@media (max-width: 475px) {
-  .products {
-    margin-top: 90%;
-  }
-}
-@media (max-width: 410px) {
-  .products {
-    margin-top: 90%;
-  }
-}
-
-@media (max-width: 395px) {
-  .products {
-    margin-top: 120%;
-  }
-}
-@media (max-width: 376px) {
-  .products {
-    margin-top: 180%;
-  }
-}
-
-@media (max-width: 768px) {
   .products__quote-title {
-    font-size: 2rem;
+    font-size: 20px;
+  }
+  .products__quote-img {
+    width: 10%;
   }
 }
-@media (max-width: 675px) {
+@media (max-width: 520px) {
   .products__quote-title {
-    font-size: 1.5rem;
-    padding-bottom: 5%;
+    font-size: 16px;
+  }
+  .products__quote-paragraph {
+    font-size: 14px;
+  }
+  .products__quote-img {
+    width: 10%;
   }
 }
-@media (max-width: 550px) {
-  .products__quote-title {
-    font-size: 1.5rem;
-    padding-bottom: 5%;
+@media (max-width: 520px) {
+  .products__title {
+    font-size: 28px;
   }
-}
-@media (max-width: 400px) {
-  .products__quote-title {
-    font-size: 1.2rem;
-    padding-bottom: 5%;
+  .products__paragraph {
+    font-size: 20px;
   }
 }
 
 .cases {
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   margin-left: 5%;
   &__content {
     position: relative;
     max-width: 100%;
     max-height: 100%;
+    margin: 3% 3%;
   }
   &__img-tablet {
     display: block;
@@ -434,15 +385,14 @@
     margin: 5% 0 5% 15%;
   }
   &__title {
-    font-family: "Playfair Display";
-    font-weight: 400;
+    @extend %Playfair400;
     font-size: 40px;
     margin-bottom: 3%;
   }
   &__paragraph {
     font-family: "Lato";
-    font-size: 18px;
     font-weight: 300;
+    font-size: 18px;
     max-width: 70%;
   }
 }
@@ -453,7 +403,30 @@
     height: 23%;
   }
   .cases__text-wrap {
-    margin: 5% 2% 5% 5%;
+    margin: 5% 3%;
+  }
+  .cases__title {
+    font-size: 30px;
+  }
+  .cases__paragraph {
+    font-size: 20px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 520px) {
+  .cases__img-play {
+    width: 15%;
+    height: 23%;
+  }
+  .cases__text-wrap {
+    margin: 5% 5%;
+  }
+  .cases__title {
+    font-size: 24px;
+  }
+  .cases__paragraph {
+    font-size: 16px;
   }
 }
 
@@ -490,25 +463,27 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
     padding: 8%;
   }
   &__left-side {
     text-align: flex-start;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     padding-right: 120px;
   }
+  &__right-side {
+    display: inline-flex;
+    flex-direction: column;
+  }
   &__title {
-    font-family: "Playfair Display";
-    font-weight: 400;
+    @extend %Playfair400;
     font-size: 24px;
     margin-bottom: 3%;
   }
   &__paragraph {
     font-family: "Lato";
-    font-size: 18px;
     font-weight: 300;
+    font-size: 18px;
   }
   &__join-now {
     color: rgba(241, 137, 123, 1);
@@ -522,10 +497,11 @@
   &__btn-border {
     border: 1px solid rgba(228, 228, 228, 1);
     padding: 20px 50px;
+    max-width: 200px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .pricing__white-box {
     margin-left: 0;
   }
@@ -552,24 +528,27 @@
   &__wrap {
     max-width: 22rem;
   }
-  &__client-title {
-    font-family: "Playfair Display";
-    font-weight: 400;
+  &__title {
+    @extend %Playfair400;
     font-size: 40px;
     margin-bottom: 30px;
   }
-  &__client-paragraph {
+  &__paragraph {
     font-family: "Lato";
-    font-size: 18px;
     font-weight: 300;
+    font-size: 18px;
+  }
+}
+@media (max-width: 520px) {
+  .client__title {
+    font-size: 26px;
+  }
+  .client__paragraph {
+    font-size: 18px;
   }
 }
 
 .resources {
-  // margin: 10% 0% 15% 7%;
-  // &__client-wrap {
-  //   max-width: 25rem;
-  // }
 
   &__boxes {
     display: flex;
@@ -595,9 +574,8 @@
 
   &__paragraph,
   &__title {
-    font-family: "Lato";
+    @extend %Lato400;
     font-size: 16px;
-    font-weight: 400;
     opacity: 0.8;
     position: absolute;
     top: 50%;
@@ -605,14 +583,13 @@
     transform: translate(-50%, -50%);
     color: white;
     margin: 0;
-    width: 70%;
+    width: 60%;
     text-align: justify;
     font-size: 14px;
     line-height: 25px;
   }
   &__title {
-    font-family: "Playfair Display";
-    font-weight: 400;
+    @extend %Playfair400;
     font-size: 20px;
     font-style: italic;
     top: 90%;
@@ -632,23 +609,20 @@
 
 .contact {
   margin: 4% 22% 0% 7%;
-  display: flex;
-  flex-direction: row;
+  @extend %DisplayRow;
   justify-content: space-around;
   align-items: center;
   &__client-wrap {
     max-width: 28rem;
   }
   &__title {
-    font-family: "Playfair Display";
-    font-weight: 400;
+    @extend %Playfair400;
     font-size: 40px;
     margin-bottom: 4%;
   }
   &__paragraph {
-    font-family: "Lato";
-    font-size: 18px;
-    font-weight: 300;
+    @extend %Lato300;
+    
   }
 
   &__form-box {
@@ -673,8 +647,7 @@
     top: 50%;
     font-size: 18px;
     color: rgba(38, 42, 63, 1);
-    font-family: "Playfair Display";
-    font-weight: 400;
+    @extend %Playfair400;
     font-size: 18px;
     font-style: italic;
   }
@@ -699,21 +672,28 @@
     align-items: flex-start;
   }
 }
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   .contact__form-box {
     width: 50%;
+  }
+  .contact__title {
+    font-size: 28px;
+  }
+  .contact__paragraph {
+    font-size: 18px;
+  }
+  .contact {
+    margin: 4% 2% 0% 7%;
   }
 }
 
 .footer {
-  display: flex;
-  flex-direction: row;
+  @extend %DisplayRow;
   justify-content: space-between;
   margin: 3% 8% 3% 7%;
 
   &__policy {
-    display: flex;
-    flex-direction: row;
+    @extend %DisplayRow;
   }
   &__policy-right {
     margin-right: 5%;
@@ -746,11 +726,10 @@
 
 /* Стили для бургер-меню */
 .header__logo-bar {
-  display: none;
+  // display: none;
   position: absolute;
   z-index: 1000;
-  display: flex;
-  flex-direction: row;
+  @extend %DisplayRow;
   align-items: center;
   justify-content: space-between;
   transition: all 0.5s ease;
@@ -803,9 +782,6 @@
     margin: 1rem;
     border-left: 3px solid #000;
   }
-  // .header__navbar a:hover {
-  //   color: #000;
-  // }
   .header__navbar.open {
     top: 75%;
     margin-left: -1%;
