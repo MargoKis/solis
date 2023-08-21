@@ -89,11 +89,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  function clearForm() {
+    inputs.forEach(function (input) {
+      input.value = "";
+      const errorSpan = input.parentElement.querySelector(".error-message");
+      errorSpan.textContent = "";
+    });
+
+    changeButtonAndLineColor(false);
+  }
+
   function showSuccessAlert() {
     Swal.fire({
       icon: "success",
       title: "Success!",
       text: "Your message has been successfully sent!",
+    }).then((result) => {
+      if (
+        result.isConfirmed ||
+        result.dismiss === Swal.DismissReason.backdrop
+      ) {
+        clearForm();
+      }
     });
   }
 });
@@ -125,8 +142,8 @@ const productsQuoteImg = document.querySelector(".products__quote-img");
 const productsTitles = document.querySelectorAll(".products__title");
 const productsParagraphs = document.querySelectorAll(".products__paragraph");
 const casesImgPlay = document.querySelector(".cases__img-play");
-const casesTitles = document.querySelectorAll(".cases__title");
-const casesParagraphs = document.querySelectorAll(".cases__paragraph");
+const casesTitles = document.querySelectorAll(".interface__title");
+const casesParagraphs = document.querySelectorAll(".interface__paragraph");
 const pricingJoinNow = document.querySelector(".pricing__join-now");
 const pricingColorLine = document.querySelector(".pricing-color-line");
 const pricingWhiteBox = document.querySelector(".pricing__white-box");
@@ -146,6 +163,16 @@ icon.addEventListener("click", function () {
   const isDarkTheme = body.classList.contains("dark-theme");
 
   if (isDarkTheme) {
+    const inputsWithPlaceholders = document.querySelectorAll(".contact__input");
+    inputsWithPlaceholders.forEach(function (input) {
+      input.style.color = "#fff";
+    });
+
+    const footerElements = document.querySelectorAll("#footer-dark");
+    footerElements.forEach(function (element) {
+      element.style.color = "#fff";
+    });
+
     for (const link of navbarLinks) {
       link.style.color = "#fff";
     }
@@ -226,6 +253,16 @@ icon.addEventListener("click", function () {
     salesColorLine.style.backgroundColor = "#53F3CD";
     casesImgPlay.src = "./assets/png/icon-play-dark.png";
   } else {
+    const inputsWithPlaceholders = document.querySelectorAll(".contact__input");
+    inputsWithPlaceholders.forEach(function (input) {
+      input.style.color = "#262A3F";
+    });
+
+    const footerElements = document.querySelectorAll("#footer-dark");
+    footerElements.forEach(function (element) {
+      element.style.color = "#000";
+    });
+
     for (const link of navbarLinks) {
       link.style.color = "black";
     }
@@ -282,6 +319,10 @@ icon.addEventListener("click", function () {
       change.style.color = "#000";
     }
 
+    for (const line of navLine) {
+      line.style.backgroundColor = "#000";
+    }
+
     body.style.backgroundColor = "initial";
     whiteBox.style.backgroundColor = "#fff";
     pricingWhiteBox.style.backgroundColor = "#fff";
@@ -330,3 +371,33 @@ window.onscroll = () => {
   menu.classList.remove("bx-x");
   navlist.classList.remove("open");
 };
+
+// Swiper
+
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  loop: true,
+  speed: 500,
+  slidesPerView: 3,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    760: {
+      slidesPerView: 2,
+    },
+    960: {
+      slidesPerView: 3,
+    },
+  },
+});
