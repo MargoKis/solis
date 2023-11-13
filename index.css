@@ -316,6 +316,7 @@ body {
 }
 .products {
   margin-top: 10%;
+  height: 100vh;
 }
 .products__advantages {
   margin-left: 8%;
@@ -328,10 +329,10 @@ body {
   position: relative;
 }
 .products__left-part {
-  max-width: 35%;
+  max-width: 40%;
 }
 .products__right-part {
-  max-width: 35%;
+  max-width: 40%;
 }
 .products__title {
   font-size: 40px;

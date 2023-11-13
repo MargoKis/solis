@@ -241,6 +241,7 @@
 
 .products {
   margin-top: 10%;
+  height: 100vh;
 
   &__advantages {
     margin-left: 8%;
@@ -253,10 +254,10 @@
     position: relative;
   }
   &__left-part {
-    max-width: 35%;
+    max-width: 40%;
   }
   &__right-part {
-    max-width: 35%;
+    max-width: 40%;
   }
   &__title {
     @extend %Playfair400;
