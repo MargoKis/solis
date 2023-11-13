@@ -18,6 +18,11 @@
     flex-direction: row;
 }
 
+%DisplayRowReverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 %DisplayColumn {
     display: flex;
     flex-direction: column;
