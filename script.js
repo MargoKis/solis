@@ -58,13 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function changeButtonAndLineColor(valid) {
     if (valid) {
-      submitButton.style.backgroundColor = "green";
+      submitButton.style.color = "green"; 
       requestColorLine.style.backgroundColor = "green";
     } else {
       submitButton.style.backgroundColor = "";
       requestColorLine.style.backgroundColor = "";
     }
   }
+  
 
   function areAllInputsValid() {
     let allInputsValid = true;
@@ -232,8 +233,8 @@ icon.addEventListener("click", function () {
     body.style.backgroundColor = "#161926";
     whiteBox.style.backgroundColor = "#161926";
     pricingWhiteBox.style.backgroundColor = "#161926";
-    contactRequest.style.color = "#53F3CD";
-    requestColorLine.style.backgroundColor = "#53F3CD";
+    contactRequest.style.color = "#F1897B";
+    requestColorLine.style.backgroundColor = "#F1897B";
     productsQuoteImg.src = "./assets/png/quote-dark.png";
     homeSection.style.backgroundImage =
       "url(./assets/png/dark-first-screen-image.png)";
