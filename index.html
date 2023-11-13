@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solis</title>
-    <link rel="stylesheet" href="./index.css" />
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,22 +18,39 @@
     ></script>
     <!--sweetalert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- my stylesheet -->
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__logo-bar">
         <img src="./assets/svg/logo.svg" alt="logo" />
-        <nav class="header__navbar">
+        <nav class="header__navbar" id="navbar">
           <a href="#resources">Resources</a>
           <a href="#pricing">Pricing</a>
-          <a href="#cases">Use Cases</a>
+          <a href="#interface">Use Cases</a>
           <a href="#products">Products</a>
           <a href="#about">About</a>
           <a href="#home">Home</a>
         </nav>
-        <i class="fa-solid fa-moon" id="icon"></i>
+        <div class="nav-icons-wrap">
+          <i class="fa-solid fa-moon" id="icon"></i>
+          <div class="nav-icons">
+            <div class="bx bx-menu" id="menu-icon"></div>
+          </div>
+        </div>
       </div>
     </header>
+
     <div class="main home" id="home">
       <div class="home__clearing-house">
         <h1 class="home__title-clearinghouse">
@@ -92,55 +108,60 @@
         </div>
       </div>
     </div>
-    <div class="products" id="products">
-      <div class="products__boxes-row">
-        <div class="products__left-part">
-          <hr />
-          <div class="products__advantages">
-            <h1 class="products__title">
-              Qualified <span class="italic">traders</span> and liquidty
-              <span class="italic">solutions</span>
-            </h1>
-            <p class="products__paragraph">
-              Trade easily and efficiently between 12 stablecoins, including
-              USDT, TrueUSD, Dai, Eurs and Gemini Dollar.
-            </p>
+
+    <div class="container">
+      <div class="products" id="products">
+        <div class="products__boxes-row">
+          <div class="products__left-part">
+            <hr />
+            <div class="products__advantages">
+              <h1 class="products__title">
+                Qualified <span class="italic">traders</span> and liquidty
+                <span class="italic">solutions</span>
+              </h1>
+              <p class="products__paragraph">
+                Trade easily and efficiently between 12 stablecoins, including
+                USDT, TrueUSD, Dai, Eurs and Gemini Dollar.
+              </p>
+            </div>
+            <hr />
+            <div class="products__advantages">
+              <h1 class="products__title">
+                The best <span class="italic">payments solutions</span>
+              </h1>
+              <p class="products__paragraph">
+                For all stablecoin payments, from point-of-sale transactions to
+                website solutions. If you use stablecoins in your business,
+                Stablehouse is for you.
+              </p>
+            </div>
           </div>
-          <hr />
-          <div class="products__advantages">
-            <h1 class="products__title">
-              The best <span class="italic">payments solutions</span>
-            </h1>
-            <p class="products__paragraph">
-              For all stablecoin payments, from point-of-sale transactions to
-              website solutions. If you use stablecoins in your business,
-              Stablehouse is for you.
-            </p>
-          </div>
-        </div>
-        <div class="products__right-part">
-          <hr />
-          <div class="products__advantages">
-            <h1 class="products__title">
-              Settlement/OTC API and <span class="italic">integration</span>
-            </h1>
-            <p class="products__paragraph">
-              Integrate OTC operations and settlements using our efficient API.
-            </p>
-          </div>
-          <hr />
-          <div class="products__advantages">
-            <h1 class="products__title">
-              <span class="italic">Treasury</span> and
-              <span class="italic">returns</span> for stablecoin stores
-            </h1>
-            <p class="products__paragraph">
-              Automate your stablecoin store with instant payments and
-              on-the-fly conversion between different stablecoins.
-            </p>
+          <div class="products__right-part">
+            <hr />
+            <div class="products__advantages">
+              <h1 class="products__title">
+                Settlement/OTC API and <span class="italic">integration</span>
+              </h1>
+              <p class="products__paragraph">
+                Integrate OTC operations and settlements using our efficient
+                API.
+              </p>
+            </div>
+            <hr />
+            <div class="products__advantages">
+              <h1 class="products__title">
+                <span class="italic">Treasury</span> and
+                <span class="italic">returns</span> for stablecoin stores
+              </h1>
+              <p class="products__paragraph">
+                Automate your stablecoin store with instant payments and
+                on-the-fly conversion between different stablecoins.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="products__quote-back">
         <img
           class="products__quote-img"
@@ -157,197 +178,184 @@
           </p>
         </div>
       </div>
-    </div>
 
-    <div class="cases" id="cases">
-      <div class="cases__content" id="pricing">
-        <img
-          class="cases__img-tablet"
-          src="./assets/png/tablet.png"
-          alt="tablet"
-        />
-        <img
-          class="cases__img-screen"
-          src="./assets/png/screensaver-video.png"
-          alt="screensaver-video"
-        />
-        <img
-          class="cases__img-play"
-          src="./assets/png/icon play.png"
-          alt="play"
-        />
+      <div class="interface" id="interface">
+        <div class="interface__content">
+          <img
+            class="interface__img-tablet"
+            src="./assets/png/tablet.png"
+            s
+            alt="tablet"
+          />
+          <img
+            class="interface__img-screen"
+            src="./assets/png/screensaver-video.png"
+            alt="screensaver-video"
+          />
+          <img
+            class="interface__img-play"
+            src="./assets/png/icon-play.png"
+            alt="play"
+          />
+        </div>
+        <div class="interface__text-wrap">
+          <h1 class="interface__title">
+            A <span class="italic">powerful API</span> , easy to use user
+            interface
+          </h1>
+          <p class="interface__paragraph">
+            Our API allows all members to interact with Stablehouse’s platform,
+            from effecting transfers to deposits, withdrawals, creation and
+            redemption and reporting.
+          </p>
+        </div>
       </div>
-      <div class="cases__text-wrap">
-        <h1 class="cases__title">
-          A <span class="italic">powerful API</span> , easy to use user
-          interface
-        </h1>
-        <p class="cases__paragraph">
-          Our API allows all members to interact with Stablehouse’s platform,
-          from effecting transfers to deposits, withdrawals, creation and
-          redemption and reporting.
-        </p>
-      </div>
-    </div>
 
-    <div class="pricing">
-      <img
-        class="img-features"
-        src="./assets/png/features-background-image.png"
-        alt="features-back"
-      />
-      <div class="pricing__white-box">
-        <div class="pricing__box-content">
-          <div class="pricing__left-side">
-            <div class="pricing__trading">
-              <h1 class="pricing__title">On-Exchange Trading</h1>
-              <p class="pricing__paragraph">
-                Instant <br />
-                Passive Inventory earns fees
-              </p>
+      <div class="pricing" id="pricing">
+        <img
+          class="img-features"
+          src="./assets/png/features-background-image.png"
+          alt="features-back"
+        />
+        <div class="pricing__white-box">
+          <div class="pricing__box-content">
+            <div class="pricing__left-side">
+              <div class="pricing__trading">
+                <h1 class="pricing__title">On-Exchange Trading</h1>
+                <p class="pricing__paragraph">
+                  Instant <br />
+                  Passive Inventory earns fees
+                </p>
+              </div>
+              <div class="pricing__settlement">
+                <h1 class="pricing__title">Time Settlement Swaps</h1>
+                <p class="pricing__paragraph">
+                  LBTC / Lightning and other sidechain swaps
+                </p>
+              </div>
             </div>
-            <div class="pricing__settlement">
-              <h1 class="pricing__title">Time Settlement Swaps</h1>
-              <p class="pricing__paragraph">
-                LBTC / Lightning and other sidechain swaps
-              </p>
-            </div>
-          </div>
-          <div class="pricing__right-side">
-            <div class="pricing__on-chain">
-              <h1 class="pricing__title">On-Chain Swaps</h1>
-              <p class="pricing__paragraph">
-                Low Counterparty risk <br />
-                Direct transfers
-              </p>
-            </div>
-            <div class="pricing__btn-border">
-              <button class="btn pricing__join-now">join now</button>
-              <p class="join-color-line"></p>
+            <div class="pricing__right-side">
+              <div class="pricing__on-chain">
+                <h1 class="pricing__title">On-Chain Swaps</h1>
+                <p class="pricing__paragraph">
+                  Low Counterparty risk <br />
+                  Direct transfers
+                </p>
+              </div>
+              <div class="pricing__btn-border">
+                <button class="btn pricing__join-now">join now</button>
+                <p class="pricing-color-line"></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="resources" id="resources">
-      <div class="resources__client-wrap">
-        <h1 class="resources__client-title">
-          Client <span class="italic"> reviews</span>
-        </h1>
-        <p class="resources__client-paragraph">
-          Happy clients, happy us. Read our client reviews about the work
-          process and results.
-        </p>
-      </div>
-      <div class="resources__boxes">
-        <div class="resources__box1">
-          <img class="img-review1" src="./assets/png/review1.png" />
-          <div class="resources__review-burge">
-            <p class="resources__paragraph1">
-              Solis did a great job. Whether providing direct development
-              support or giving us the opportunity to make our development
-              updates, Solis's web design expertise and support services were
-              top notch! It didn't take long to stand up our website, and we
-              were pleased with the design and layout of the graphics and
-              information.
-            </p>
-            <h1 class="resources__title1">Dr. Jamika Burge</h1>
-          </div>
-        </div>
-        <div class="resources__box2">
-          <img class="img-review2" src="./assets/png/review2.png" />
-          <div class="resources__review-prosse">
-            <p class="resources__paragraph2">
-              Solis did a great job. Whether providing direct development
-              support or giving us the opportunity to make our development
-              updates, Solis's web design expertise and support services were
-              top notch! It didn't take long to stand up our website, and we
-              were pleased with the design and layout of the graphics and
-              information.
-            </p>
-            <h1 class="resources__title2">Dr. Jamika Burge</h1>
-          </div>
-        </div>
-        <div class="resources__box3">
-          <img class="img-review3" src="./assets/png/review3.png" />
-          <div class="resources__review-mooney">
-            <p class="resources__paragraph3">
-              Solis did a great job. Whether providing direct development
-              support or giving us the opportunity to make our development
-              updates, Solis's web design expertise and support services were
-              top notch! It didn't take long to stand up our website, and we
-              were pleased with the design and layout of the graphics and
-              information.
-            </p>
-            <h1 class="resources__title3">Dr. Jamika Burge</h1>
-          </div>
+      <div class="client" id="resources">
+        <div class="client__wrap">
+          <h1 class="client__title">
+            Client <span class="italic"> reviews</span>
+          </h1>
+          <p class="client__paragraph">
+            Happy clients, happy us. Read our client reviews about the work
+            process and results.
+          </p>
         </div>
       </div>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./assets/png/client-review1.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/png/client-review2.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/png/client-review3.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/png/client-review1.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/png/client-review2.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/png/client-review3.png" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <hr class="hr" />
+      <div class="contact">
+        <div class="contact__client-wrap">
+          <h1 class="contact__title">
+            Contact <span class="italic"> our sales team</span>
+          </h1>
+          <p class="contact__paragraph">
+            Our team is happy to answer your sales questions.Fill out the form
+            and we’ll be in touch as soon as possible.
+          </p>
+        </div>
+        <div class="contact__form-box">
+          <form id="form" action="/">
+            <div class="contact__input-box">
+              <input
+                class="contact__input"
+                id="username"
+                name="username"
+                type="text"
+                required
+                placeholder="Your name"
+              />
+              <label class="contact__label" for="username"></label>
+              <span id="error-name" class="error-message"></span>
+            </div>
+            <div class="contact__input-box">
+              <input
+                class="contact__input"
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="Email"
+              />
+              <label class="contact__label" for="email"></label>
+              <span id="error-email" class="error-message"></span>
+            </div>
+            <div class="contact__input-box">
+              <input
+                class="contact__input"
+                id="more"
+                name="more"
+                type="text"
+                required
+                placeholder="Tell more"
+              />
+              <label class="contact__label" for="more"></label>
+              <span id="error-more" class="error-message"></span>
+            </div>
+            <button type="submit" class="btn contact__request" id="submitBtn">
+              send request
+            </button>
+            <p class="request-color-line"></p>
+          </form>
+        </div>
+      </div>
+      <hr class="hr" />
     </div>
-    <hr class="hr-contact" />
-    <div class="contact">
-      <div class="contact__client-wrap">
-        <h1 class="contact__title">
-          Contact <span class="italic"> our sales team</span>
-        </h1>
-        <p class="contact__paragraph">
-          Our team is happy to answer your sales questions.Fill out the form and
-          we’ll be in touch as soon as possible.
-        </p>
-      </div>
-      <div class="contact__form-box">
-        <form id="form" action="/">
-          <div class="contact__input-box">
-            <input
-              class="contact__input"
-              id="username"
-              name="username"
-              type="text"
-              required
-            />
-            <label class="contact__label" for="username">Your name</label>
-            <span id="error-name" class="error-message"></span>
-          </div>
-          <div class="contact__input-box">
-            <input
-              class="contact__input"
-              id="email"
-              name="email"
-              type="email"
-              required
-            />
-            <label class="contact__label" for="email">Email</label>
-            <span id="error-email" class="error-message"></span>
-          </div>
-          <div class="contact__input-box">
-            <input
-              class="contact__input"
-              id="more"
-              name="more"
-              type="text"
-              required
-            />
-            <label class="contact__label" for="more">Tell more</label>
-            <span id="error-more" class="error-message"></span>
-          </div>
-          <button type="submit" class="btn contact__request" id="submitBtn">
-            send request
-          </button>
-          <p class="sales-color-line"></p>
-        </form>
-      </div>
-    </div>
-    <hr class="hr-footer" />
     <footer class="footer">
-      <p>© 2020 Solisgroup. All Rights Reserved.</p>
-      <p>made by <b>Zgraya.digital</b></p>
+      <p id="footer-dark">© 2020 Solisgroup. All Rights Reserved.</p>
+      <p id="footer-dark">made by <b>Zgraya.digital</b></p>
       <div class="footer__policy">
-        <p class="footer__policy-right">User Agreement</p>
-        <p>Privacy Policy</p>
+        <p class="footer__policy-right" id="footer-dark">User Agreement</p>
+        <p id="footer-dark">Privacy Policy</p>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

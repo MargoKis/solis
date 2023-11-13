@@ -6,12 +6,13 @@
     font-weight: 700;
     line-height: 20px;
     font-size: 18px;
-    color: rgba(241, 137, 123, 1);
     cursor: pointer;
 }
 
 .sales-color-line,
-.join-color-line {
+.join-color-line, 
+.pricing-color-line,
+.request-color-line {
     background-color: rgba(241, 137, 123, 1);
     opacity: .3;
     cursor: pointer;  
@@ -31,6 +32,20 @@
     margin-top: -12px;
 }
 
+.pricing-color-line {
+    width: 5.7rem;
+    height: 13px;
+    margin-left: 10px;
+    margin-top: -12px;
+}
+
+.request-color-line {
+    width: 8.5rem;
+    height: 13px;
+    margin-left: 10px;
+    margin-top: -12px;
+}
+
 .box-hr {
 
     margin-top: 20%;
@@ -39,14 +54,7 @@
     border: 1px solid rgba(133, 187, 177, 1)
 }
 
-.hr-contact {
-    margin-top: 25%;
-    width: 85%;
-    margin-left: 7%;
-}
-
-.hr-footer {
-    margin-top: 5%;
-    width: 85%;
-    margin-left: 7%;
+.hr {
+    margin-top: 8%;
+    color: #E4E4E4;
 }
