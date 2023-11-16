@@ -238,10 +238,10 @@ body {
   line-height: 25px;
   color: rgb(38, 42, 63);
   font-size: 18px;
+  margin-bottom: 10%;
 }
 .home__contact-sales {
   color: rgb(241, 137, 123);
-  margin-top: 10%;
 }
 
 @media (max-width: 1120px) {
@@ -558,6 +558,7 @@ body {
   font-size: 18px;
 }
 .pricing__join-now {
+  cursor: pointer;
   color: rgb(241, 137, 123);
 }
 .pricing__settlement {
@@ -570,6 +571,7 @@ body {
   border: 1px solid rgb(228, 228, 228);
   padding: 20px 53px;
   max-width: 200px;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
@@ -715,7 +717,6 @@ body {
 .contact__input-box small {
   visibility: hidden;
 }
-
 ::-moz-placeholder {
   font-style: italic;
   font-size: 18px;
@@ -723,7 +724,6 @@ body {
   top: 60;
   left: 0;
 }
-
 ::placeholder {
   font-style: italic;
   font-size: 18px;

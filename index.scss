@@ -155,10 +155,10 @@
     color: rgba(38, 42, 63, 1);
     @extend %Lato300;
     font-size: 18px;
+    margin-bottom: 10%;
   }
   &__contact-sales {
     color: rgba(241, 137, 123, 1);
-    margin-top: 10%;
   }
 }
 
@@ -502,6 +502,7 @@
     font-size: 18px;
   }
   &__join-now {
+    cursor: pointer;
     color: rgba(241, 137, 123, 1);
   }
   &__settlement {
@@ -514,6 +515,7 @@
     border: 1px solid rgba(228, 228, 228, 1);
     padding: 20px 53px;
     max-width: 200px;
+    cursor: pointer;
   }
 }
 
@@ -683,6 +685,11 @@
 
   &__input-box small {
     visibility: hidden;
+  }
+  &__btn-border {
+    // border: 1px solid rgba(228, 228, 228, 1);
+    // padding: 10px 43px;
+    // max-width: 260px;
   }
 }
 

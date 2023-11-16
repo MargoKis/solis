@@ -16,7 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function validateInput(input, errorSpan) {
     if (input.id === "username") {
-      if (input.value.trim().length < 3 || input.value.trim().length > 12) {
+      if (/\d/.test(input.value)) {
+        errorSpan.textContent = "Name cannot contain digits";
+      } else if (
+        input.value.trim().length < 3 ||
+        input.value.trim().length > 12
+      ) {
         errorSpan.textContent = "Name must be between 3 and 12 characters";
       } else {
         errorSpan.textContent = "";
@@ -58,14 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function changeButtonAndLineColor(valid) {
     if (valid) {
-      submitButton.style.color = "green"; 
+      submitButton.style.color = "green";
       requestColorLine.style.backgroundColor = "green";
     } else {
-      submitButton.style.backgroundColor = "";
+      submitButton.style.color = "";
       requestColorLine.style.backgroundColor = "";
     }
   }
-  
 
   function areAllInputsValid() {
     let allInputsValid = true;
@@ -81,14 +85,17 @@ document.addEventListener("DOMContentLoaded", function () {
     return allInputsValid;
   }
 
-  submitButton.addEventListener("click", function (event) {
+  function handleButtonClick(event) {
     console.log("Button clicked!");
     event.preventDefault();
 
     if (areAllInputsValid()) {
       showSuccessAlert();
     }
-  });
+  }
+
+  submitButton.addEventListener("click", handleButtonClick);
+  requestColorLine.addEventListener("click", handleButtonClick);
 
   function clearForm() {
     inputs.forEach(function (input) {
@@ -114,6 +121,36 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+});
+
+// add sweet alert on buttons
+
+document.addEventListener("DOMContentLoaded", function () {
+  const joinElements = document.querySelectorAll(".join");
+
+  joinElements.forEach(function (element) {
+    element.addEventListener("click", function () {
+      Swal.fire({
+        icon: "success",
+        title: "Join Now",
+        text: "Thank you for joining!",
+      });
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contactElements = document.querySelectorAll(".contact");
+
+  contactElements.forEach(function (element) {
+    element.addEventListener("click", function () {
+      Swal.fire({
+        icon: "info",
+        title: "Contact Sales",
+        text: "Our sales team will contact you shortly!",
+      });
+    });
+  });
 });
 
 // Dark Theme
