@@ -241,7 +241,6 @@
 
 .products {
   margin-top: 10%;
-  height: 100vh;
 
   &__advantages {
     margin-left: 8%;
@@ -314,6 +313,7 @@
 @media (max-width: 768px) {
   .products__boxes-row {
     flex-direction: column;
+
     // margin-left: 7%;
   }
   .products__left-part {
@@ -722,7 +722,7 @@
 }
 
 #form {
-  margin-top: 20%
+  margin-top: 20%;
 }
 
 .footer {
