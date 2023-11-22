@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const contactElements = document.querySelectorAll(".contact");
+  const contactElements = document.querySelectorAll(".contact-sales");
 
   contactElements.forEach(function (element) {
     element.addEventListener("click", function () {
@@ -160,6 +160,7 @@ const body = document.body;
 const homeSection = document.querySelector(".home");
 const iconContainer = document.querySelector(".icon-container");
 const navbarLinks = document.querySelectorAll(".header__navbar a");
+const headerNavBack = document.querySelector('.header__navbar');
 const navLine = document.querySelectorAll(".header__navbar a::before");
 const titleClearinghouse = document.querySelector(".home__title-clearinghouse");
 const spanClearinghouse = document.querySelector(
@@ -212,7 +213,7 @@ icon.addEventListener("click", function () {
     });
 
     for (const link of navbarLinks) {
-      link.style.color = "#fff";
+      link.style.color = "black";
     }
 
     for (const solution of italicSolutions) {
@@ -290,6 +291,7 @@ icon.addEventListener("click", function () {
     contactSalesButton.style.borderColor = "#53F3CD";
     salesColorLine.style.backgroundColor = "#53F3CD";
     casesImgPlay.src = "./assets/png/icon-play-dark.png";
+    headerNavBack.style.backgroundColor = '#fff'
   } else {
     const inputsWithPlaceholders = document.querySelectorAll(".contact__input");
     inputsWithPlaceholders.forEach(function (input) {
@@ -390,6 +392,7 @@ icon.addEventListener("click", function () {
     solisGroupText.style.color = "initial";
     contactLabel.style.color = "#000";
     casesImgPlay.src = "./assets/png/icon-play.png";
+    headerNavBack.style.backgroundColor = '#fff'
   }
 });
 

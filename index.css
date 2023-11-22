@@ -717,6 +717,7 @@ body {
 .contact__input-box small {
   visibility: hidden;
 }
+
 ::-moz-placeholder {
   font-style: italic;
   font-size: 18px;
@@ -724,6 +725,7 @@ body {
   top: 60;
   left: 0;
 }
+
 ::placeholder {
   font-style: italic;
   font-size: 18px;
@@ -846,7 +848,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: left;
-    background: #d4d4d4;
+    background: #ffffff;
     transition: all 0.5s ease;
   }
   .header__navbar a {
