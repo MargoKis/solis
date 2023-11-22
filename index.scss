@@ -686,11 +686,6 @@
   &__input-box small {
     visibility: hidden;
   }
-  &__btn-border {
-    // border: 1px solid rgba(228, 228, 228, 1);
-    // padding: 10px 43px;
-    // max-width: 260px;
-  }
 }
 
 ::placeholder {
@@ -824,7 +819,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    background: #d4d4d4;
+    background: #ffffff;
     transition: all 0.5s ease;
   }
   .header__navbar a {
